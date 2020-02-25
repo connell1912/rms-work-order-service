@@ -7,7 +7,9 @@ public enum Category {
 
     private final int type;
 
-    private Category(int type){this.type = type;}
+    private Category(int type) {
+        this.type = type;
+    }
 
     public int getValue() {
         return type;
