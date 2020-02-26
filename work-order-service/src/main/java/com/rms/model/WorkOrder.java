@@ -1,7 +1,7 @@
 package com.rms.model;
 
 import java.util.Objects;
-import java.util.Locale.Category;
+// import java.util.Locale.Category;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,43 +10,51 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-// @Entity
-// @Table
+@Entity
+@Table
 public class WorkOrder {
     
-    // @Id
-    // @Column
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    // @Column
+    @Column
     private String createdDateTime;
 
-    // @Column
+    @Column
     private String resolvedDateTime;
 
-    // @Column
+    @Column
     private Category category;
 
-    // @Column 
+    @Column 
     private String description;
 
-    // @Column 
+    @Column 
     private String contactEmail;
 
-    // @Column
+    @Column
     private int creatorId;
 
-    // @Column
+    @Column
     private int resolverId;
 
 
-    public WorkOrder() {
-        
-    }
+    public WorkOrder() {}
 
     public WorkOrder(int id, String createdDateTime, String resolvedDateTime, Category category, String description, String contactEmail, int creatorId, int resolverId) {
         this.id = id;
+        this.createdDateTime = createdDateTime;
+        this.resolvedDateTime = resolvedDateTime;
+        this.category = category;
+        this.description = description;
+        this.contactEmail = contactEmail;
+        this.creatorId = creatorId;
+        this.resolverId = resolverId;
+    }
+
+    public WorkOrder(String createdDateTime, String resolvedDateTime, Category category, String description, String contactEmail, int creatorId, int resolverId) {
         this.createdDateTime = createdDateTime;
         this.resolvedDateTime = resolvedDateTime;
         this.category = category;
