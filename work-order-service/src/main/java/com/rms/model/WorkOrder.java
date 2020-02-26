@@ -1,14 +1,19 @@
 package com.rms.model;
 
+import java.sql.Timestamp;
 import java.util.Objects;
 // import java.util.Locale.Category;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table
@@ -20,12 +25,14 @@ public class WorkOrder {
     private int id;
 
     @Column
-    private String createdDateTime;
+    @CreationTimestamp
+    private Timestamp createdDateTime;
 
     @Column
     private String resolvedDateTime;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private Category category;
 
     @Column 
@@ -43,7 +50,7 @@ public class WorkOrder {
 
     public WorkOrder() {}
 
-    public WorkOrder(int id, String createdDateTime, String resolvedDateTime, Category category, String description, String contactEmail, int creatorId, int resolverId) {
+    public WorkOrder(int id, Timestamp createdDateTime, String resolvedDateTime, Category category, String description, String contactEmail, int creatorId, int resolverId) {
         this.id = id;
         this.createdDateTime = createdDateTime;
         this.resolvedDateTime = resolvedDateTime;
@@ -54,8 +61,7 @@ public class WorkOrder {
         this.resolverId = resolverId;
     }
 
-    public WorkOrder(String createdDateTime, String resolvedDateTime, Category category, String description, String contactEmail, int creatorId, int resolverId) {
-        this.createdDateTime = createdDateTime;
+    public WorkOrder(String resolvedDateTime, Category category, String description, String contactEmail, int creatorId, int resolverId) {
         this.resolvedDateTime = resolvedDateTime;
         this.category = category;
         this.description = description;
@@ -72,11 +78,11 @@ public class WorkOrder {
         this.id = id;
     }
 
-    public String getCreatedDateTime() {
+    public Timestamp getCreatedDateTime() {
         return this.createdDateTime;
     }
 
-    public void setCreatedDateTime(String createdDateTime) {
+    public void setCreatedDateTime(Timestamp createdDateTime) {
         this.createdDateTime = createdDateTime;
     }
 
@@ -133,7 +139,7 @@ public class WorkOrder {
         return this;
     }
 
-    public WorkOrder createdDateTime(String createdDateTime) {
+    public WorkOrder createdDateTime(Timestamp createdDateTime) {
         this.createdDateTime = createdDateTime;
         return this;
     }
