@@ -42,6 +42,7 @@ public class WorkOrder {
 
 
     public WorkOrder() {
+        
     }
 
     public WorkOrder(int id, String createdDateTime, String resolvedDateTime, Category category, String description, String contactEmail, int creatorId, int resolverId) {
