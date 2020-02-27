@@ -1,5 +1,7 @@
 package com.rms.controller;
 
+import java.sql.Timestamp;
+
 import com.rms.dao.WorkOrderDao;
 import com.rms.model.WorkOrder;
 
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import ch.qos.logback.core.joran.action.TimestampAction;
 
 @RestController
 @RequestMapping("/workorder")
@@ -37,7 +41,7 @@ public class WorkOrderController {
     } 
 
     @PutMapping("/{id}")
-    public String updateResolved(@PathVariable("id") int id, String resolvedtime) {
+    public String updateResolved(@PathVariable("id") int id, Timestamp resolvedtime) {
         WorkOrder wo = wod.findById(id).get();
         wo.setResolvedDateTime(resolvedtime);
         wod.save(wo);
