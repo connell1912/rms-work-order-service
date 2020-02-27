@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route, Switch } from 'react-router-dom';
+import { LandingComponent } from './components/Landing/LandingComponent';
+import { WorkOrderComponent } from './components/WorkOrderTable/WorkOrderComponent';
+import { history } from './history/history';
+import { Router } from 'react-router';
+import SubmitWO from './components/AddWO/SubmitWO';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router history={history}>
+        <div>
+          <Switch>
+            <Route path='/workordertable' component={WorkOrderComponent}/>
+            <Route path='/addworkorder' component={SubmitWO}/>
+            <Route path='/' component={LandingComponent}/>
+          </Switch>
+        </div>
+      </Router>
     </div>
-  );
+  )
 }
 
 export default App;
