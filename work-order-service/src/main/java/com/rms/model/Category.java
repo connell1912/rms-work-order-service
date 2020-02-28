@@ -7,11 +7,7 @@ public enum Category {
 
     private final int type;
 
-<<<<<<< HEAD
-    private Category(int type){
-=======
     private Category(int type) {
->>>>>>> bf13305cb8d678afde3c5962db86bee7571ffa02
         this.type = type;
     }
 
