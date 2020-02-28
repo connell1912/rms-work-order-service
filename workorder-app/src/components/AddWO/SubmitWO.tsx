@@ -66,9 +66,10 @@ export class SubmitWO extends React.Component<INewWOState, any> {
                         required
                         type="select"
                         name="inputcat"
-                        placeholder="Select Category"
+                        // placeholder="Select Category"
                         value={this.state.category} 
                         onChange={this.updateCategory}>
+                            <option>Select A Category</option>
                             <option>LIGHTING</option>
                             <option>AIR_CONDITIONING</option>
                             <option>DOORS</option>
