@@ -9,7 +9,7 @@ export class LandingComponent extends React.Component {
                 <br/>
                 <Link to='/workordertable'>Work Order Table</Link>
                 <br/>
-                <br/>
+                <Link to='/roomtable'>Room Table</Link>
                 <br/>
                 <Link to='/addworkorder'>Add New Work Order</Link>
             </div>

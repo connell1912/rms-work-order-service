@@ -7,6 +7,7 @@ import { WorkOrderComponent } from './components/WorkOrderTable/WorkOrderCompone
 import { history } from './history/history';
 import { Router } from 'react-router';
 import SubmitWO from './components/AddWO/SubmitWO';
+import { RoomTableComponent } from './components/RoomTable/RoomTableComponent';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Switch>
             <Route path='/workordertable' component={WorkOrderComponent}/>
             <Route path='/addworkorder' component={SubmitWO}/>
+            <Route path='/roomtable' component={RoomTableComponent}/>
             <Route path='/' component={LandingComponent}/>
           </Switch>
         </div>

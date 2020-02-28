@@ -8,3 +8,7 @@ export const getWOList = () => {
 export const publishWorkOrder = (body: IWorkOrder) => {
     return axiosConfig.post("workorder/newworkorder", body);
 }
+
+export const getRooms = () => {
+    return axiosConfig.get("room/all");
+}
