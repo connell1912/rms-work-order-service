@@ -76,7 +76,6 @@
 			<artifactId>spring-aspects</artifactId>
 			<version>5.2.2.RELEASE</version>
 		</dependency>
-<<<<<<< HEAD
 		<dependency>      
 			<groupId>com.h2database</groupId>      
 			<artifactId>h2</artifactId>      
@@ -84,13 +83,6 @@
 		</dependency>
 
 
-=======
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>	  
->>>>>>> 8ca7dedf963cf1dd15f27b93e221e1e2e262ac44
 	</dependencies>
 
 	<dependencyManagement>

@@ -3,7 +3,7 @@ export interface IRoom {
     roomNumber: string,
     maxOccupancy: number,
     isActive: boolean,
-    currentStatus: any,
+    //currentStatus: any,
     batchId: number,
     workOrders: any[],
     // resourceMetadata: Object
