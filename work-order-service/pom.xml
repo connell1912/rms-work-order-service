@@ -33,10 +33,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-aws-messaging</artifactId>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
@@ -76,6 +76,7 @@
 			<artifactId>spring-aspects</artifactId>
 			<version>5.2.2.RELEASE</version>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>      
 			<groupId>com.h2database</groupId>      
 			<artifactId>h2</artifactId>      
@@ -83,6 +84,13 @@
 		</dependency>
 
 
+=======
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>	  
+>>>>>>> 8ca7dedf963cf1dd15f27b93e221e1e2e262ac44
 	</dependencies>
 
 	<dependencyManagement>
