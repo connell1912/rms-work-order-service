@@ -23,7 +23,6 @@
 		<sonar.host.url>https://sonarcloud.io/</sonar.host.url>
 		<sonar.login>57904f4edd0b07b88adaaae43094f9bfc15973b5</sonar.login>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
