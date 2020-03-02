@@ -28,5 +28,9 @@ public class WorkOrderService {
         wod.deleteById(id);
     }
 
+    public void updateWorkOrder(WorkOrder wo) {
+        wod.save(wo);
+    }
+
 
 }
