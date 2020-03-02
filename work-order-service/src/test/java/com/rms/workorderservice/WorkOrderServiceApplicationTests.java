@@ -1,8 +1,8 @@
 package com.rms.workorderservice;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -31,10 +31,10 @@ public class WorkOrderServiceApplicationTests {
 	@Mock
 	WorkOrderDao wod;
 
-	// @Before
-	// public void init() {
-	// 	MockitoAnnotations.initMocks(this);
-	// }
+	@Before
+	public void init() {
+		MockitoAnnotations.initMocks(this);
+	}
 
 	@Test
 	public void testSaveNewWorkOrder() {
@@ -60,15 +60,22 @@ public class WorkOrderServiceApplicationTests {
 	public void testUpdateWorkOrder() {
 		WorkOrder wo = new WorkOrder(null, Category.OTHER, Status.PENDING, "Test work order", "test1@test.com", 1);
 		wos.addWorkOrder(wo);
-		// System.out.println("Here is the id number: "+wo.getId()+wo.getDescription());
-		
-		// WorkOrder wo2 = wos.grabById(0);
+
 		WorkOrder wo2 = wo;
 
 		wo2 = new WorkOrder(null, Category.DOORS, Status.PENDING, "Testing a door", "test2@test.com", 1);
 		wos.updateWorkOrder(wo2);
-		System.out.println("LOOK HERE: "+wo2.getDescription());
+		// System.out.println("LOOK HERE: "+wo2.getDescription());
 		assertEquals("Testing a door", wo2.getDescription());
+	}
+
+	@Test
+	public void testDeleteWorkOrder() {
+		WorkOrder wo = new WorkOrder(33, Category.OTHER, Status.PENDING, "Testing delete", "test3@test.com", 3);
+		wos.addWorkOrder(wo);
+		WorkOrder wo2 = wos.grabById(33);
+		wos.deleteWorkOrder(33);
+		assertFalse(wo2 != null);
 	}
 
 }
