@@ -89,6 +89,23 @@ public class WorkOrder {
         this.creatorId = creatorId;
     }
 
+    public WorkOrder(Category category, Status status, String description, String contactEmail, int creatorId) {
+        this.category = category;
+        this.status = status;
+        this.description = description;
+        this.contactEmail = contactEmail;
+        this.creatorId = creatorId;
+    }
+
+    public WorkOrder(int id, Category category, Status status, String description, String contactEmail, int creatorId) {
+        this.id = id;
+        this.category = category;
+        this.status = status;
+        this.description = description;
+        this.contactEmail = contactEmail;
+        this.creatorId = creatorId;
+    }
+
     public int getId() {
         return this.id;
     }

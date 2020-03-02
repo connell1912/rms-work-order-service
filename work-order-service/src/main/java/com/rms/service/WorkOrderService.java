@@ -17,7 +17,7 @@ public class WorkOrderService {
     }
 
     public WorkOrder grabById(int id) {
-        return wod.findById(id).get();
+        return wod.findById(id);
     }
 
     public void addWorkOrder(WorkOrder wo) {
@@ -26,6 +26,10 @@ public class WorkOrderService {
 
     public void deleteWorkOrder(int id) {
         wod.deleteById(id);
+    }
+
+    public void updateWorkOrder(WorkOrder wo) {
+        wod.save(wo);
     }
 
 
