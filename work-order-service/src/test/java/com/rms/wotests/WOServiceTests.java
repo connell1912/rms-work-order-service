@@ -60,18 +60,18 @@ public class WOServiceTests {
         ws.addWorkOrder(wo);
     }
 
-    @Test
-    public void deleteTest() {
-    ws.deleteWO(wo);
-    WorkOrder wo2 = ws.grabById(12);
-    assertTrue(wo2 == null);
-    }
+    // @Test
+    // public void deleteTest() {
+    // ws.deleteWO(wo);
+    // WorkOrder wo2 = ws.grabById(12);
+    // assertTrue(wo2 == null);
+    // }
 
-    @Test
-    public void findAllTest() {
-    List<WorkOrder> ls = (List<WorkOrder>) ws.grabAll();
-    System.out.println("\n***********:\n"+ls);
-    assertTrue(ls != null);
-    }
+    // @Test
+    // public void findAllTest() {
+    // List<WorkOrder> ls = (List<WorkOrder>) ws.grabAll();
+    // System.out.println("\n***********:\n"+ls);
+    // assertTrue(ls != null);
+    // }
 
 }
