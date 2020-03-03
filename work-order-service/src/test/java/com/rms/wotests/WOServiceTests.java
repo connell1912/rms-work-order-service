@@ -1,7 +1,11 @@
 package com.rms.wotests;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.util.List;
 
@@ -55,23 +59,27 @@ public class WOServiceTests {
     public void updateTest() {
         System.out.println("*********************update\n");
         WorkOrder wo = ws.grabById(1);
-        System.out.println(ws);
+        System.out.println(wo);
         wo.setContactEmail("wow@test.com");
-        ws.addWorkOrder(wo);
+        WorkOrder wo2 = ws.grabById(1);
+        ws.updateWorkOrder(wo2);
+        assertNotSame(wo, wo2);
     }
 
-    // @Test
-    // public void deleteTest() {
-    // ws.deleteWO(wo);
-    // WorkOrder wo2 = ws.grabById(12);
-    // assertTrue(wo2 == null);
-    // }
+    @Test
+    public void deleteTest() {
+    WorkOrder wo2 = ws.grabById(5);
+    System.out.println(wo2);
+    ws.deleteWO(wo2);
+    WorkOrder wo3 = ws.grabById(5);
+    assertFalse(wo3 != null);
+    }
 
-    // @Test
-    // public void findAllTest() {
-    // List<WorkOrder> ls = (List<WorkOrder>) ws.grabAll();
-    // System.out.println("\n***********:\n"+ls);
-    // assertTrue(ls != null);
-    // }
+    @Test
+    public void findAllTest() {
+    List<WorkOrder> ls = (List<WorkOrder>) ws.grabAll();
+    System.out.println("\n***********:\n"+ls);
+    assertTrue(ls != null);
+    }
 
 }
