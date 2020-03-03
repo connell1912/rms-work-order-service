@@ -1,9 +1,6 @@
 package com.rms.model;
 
 import java.sql.Timestamp;
-import java.util.Objects;
-// import java.util.Locale.Category;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -75,31 +72,6 @@ public class WorkOrder {
         this.description = description;
         this.contactEmail = contactEmail;
         this.creatorId = creatorId;
-    }
-
-    public WorkOrder(int id, Category category, Status status, String description, String contactEmail, int creatorId) {
-        this.id = id;
-        this.category = category;
-        this.status = status;
-        this.description = description;
-        this.contactEmail = contactEmail;
-        this.creatorId = creatorId;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == this)
-            return true;
-        if (!(o instanceof WorkOrder)) {
-            return false;
-        }
-        WorkOrder workOrder = (WorkOrder) o;
-        return id == workOrder.id && Objects.equals(createdDateTime, workOrder.createdDateTime) && Objects.equals(resolvedDateTime, workOrder.resolvedDateTime) && Objects.equals(category, workOrder.category) && Objects.equals(status, workOrder.status) && Objects.equals(description, workOrder.description) && Objects.equals(contactEmail, workOrder.contactEmail) && creatorId == workOrder.creatorId && resolverId == workOrder.resolverId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, createdDateTime, resolvedDateTime, category, status, description, contactEmail, creatorId, resolverId);
     }
 
 }
