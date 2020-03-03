@@ -112,7 +112,15 @@
 				<version>Hoxton.SR1</version>
 				<type>pom</type>
 				<scope>import</scope>
-			</dependency>		
+			</dependency>
+			
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-all</artifactId>
+				<version>1.3</version>
+				<scope>test</scope>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 

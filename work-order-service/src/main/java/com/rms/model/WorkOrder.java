@@ -24,7 +24,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class WorkOrder {
-    
+
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,10 +45,10 @@ public class WorkOrder {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @Column 
+    @Column
     private String description;
 
-    @Column 
+    @Column
     private String contactEmail;
 
     @Column
@@ -57,7 +57,20 @@ public class WorkOrder {
     @Column
     private int resolverId;
 
-     public WorkOrder(Timestamp resolvedDateTime, Category category, Status status, String description, String contactEmail, int creatorId) {
+    public WorkOrder(Timestamp createdDateTime, Timestamp resolvedDateTime, Category category, Status status,
+            String description, String contactEmail, int creatorId, int resolverId) {
+        this.createdDateTime = createdDateTime;
+        this.resolvedDateTime = resolvedDateTime;
+        this.category = category;
+        this.status = status;
+        this.description = description;
+        this.contactEmail = contactEmail;
+        this.creatorId = creatorId;
+        this.resolverId = resolverId;
+    }
+
+    public WorkOrder(Timestamp resolvedDateTime, Category category, Status status, String description,
+            String contactEmail, int creatorId) {
         this.resolvedDateTime = resolvedDateTime;
         this.category = category;
         this.status = status;
