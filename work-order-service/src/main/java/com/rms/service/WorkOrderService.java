@@ -24,6 +24,10 @@ public class WorkOrderService {
         wod.save(wo);
     }
 
+    public void deleteWO(WorkOrder wo) {
+        wod.delete(wo);
+    }
+
     public void deleteWorkOrder(int id) {
         wod.deleteById(id);
     }

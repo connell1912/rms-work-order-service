@@ -1,4 +1,4 @@
-package com.rms.workorderservice;
+package com.rms.wotests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -19,11 +19,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-public class WorkOrderServiceApplicationTests {
+public class MockWOServiceTests {
 
-	// @Test
-	// void contextLoads() {
-	// }
+	private WorkOrder wo;
 
 	@InjectMocks
 	WorkOrderService wos;
@@ -34,11 +32,11 @@ public class WorkOrderServiceApplicationTests {
 	@Before
 	public void init() {
 		MockitoAnnotations.initMocks(this);
+		wo = new WorkOrder(Category.OTHER, Status.PENDING, "Test work order", "test1@test.com", 1);
 	}
 
 	@Test
 	public void testSaveNewWorkOrder() {
-		WorkOrder wo = new WorkOrder(null, Category.OTHER, Status.PENDING, "Test work order", "test1@test.com", 1);
 		wos.addWorkOrder(wo);
 		verify(wod, times(1)).save(wo);
 	}
@@ -51,14 +49,13 @@ public class WorkOrderServiceApplicationTests {
 
 	@Test
 	public void testGrabById() {
-		when(wod.findById(1)).thenReturn(new WorkOrder(36, Category.OTHER, Status.PENDING, "Test 2", "test2@test.com", 1));
-		WorkOrder wo2 = wod.findById(1);
-		assertEquals("Test 2", wo2.getDescription());
+		when(wod.findById(0)).thenReturn(wo);
+		WorkOrder wo2 = wod.findById(0);
+		assertEquals("test1@test.com", wo2.getContactEmail());
 	}
 
 	@Test
 	public void testUpdateWorkOrder() {
-		WorkOrder wo = new WorkOrder(null, Category.OTHER, Status.PENDING, "Test work order", "test1@test.com", 1);
 		wos.addWorkOrder(wo);
 
 		WorkOrder wo2 = wo;
@@ -71,10 +68,9 @@ public class WorkOrderServiceApplicationTests {
 
 	@Test
 	public void testDeleteWorkOrder() {
-		WorkOrder wo = new WorkOrder(33, Category.OTHER, Status.PENDING, "Testing delete", "test3@test.com", 3);
 		wos.addWorkOrder(wo);
-		WorkOrder wo2 = wos.grabById(33);
-		wos.deleteWorkOrder(33);
+		WorkOrder wo2 = wos.grabById(1);
+		wos.deleteWorkOrder(1);
 		assertFalse(wo2 != null);
 	}
 
