@@ -7,6 +7,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.Optional;
+
 import com.rms.dao.WorkOrderDao;
 import com.rms.model.Category;
 import com.rms.model.Status;
@@ -49,8 +51,8 @@ public class MockWOServiceTests {
 
 	@Test
 	public void testGrabById() {
-		when(wod.findById(0)).thenReturn(wo);
-		WorkOrder wo2 = wod.findById(0);
+		when(wod.findById(1)).thenReturn(Optional.of(wo));
+		WorkOrder wo2 = wos.grabById(1);
 		assertEquals("test1@test.com", wo2.getContactEmail());
 	}
 
@@ -69,9 +71,9 @@ public class MockWOServiceTests {
 	@Test
 	public void testDeleteWorkOrder() {
 		wos.addWorkOrder(wo);
-		WorkOrder wo2 = wos.grabById(1);
+		when(wod.findById(1)).thenReturn(Optional.of(wo));
 		wos.deleteWorkOrder(1);
-		assertFalse(wo2 != null);
+		assertFalse(wo != null);
 	}
 
 }

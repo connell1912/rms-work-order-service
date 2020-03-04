@@ -83,10 +83,10 @@ public class WOServiceTests {
 
     @Test
     public void deleteTest() {
-    WorkOrder wo2 = ws.grabById(23);
+    WorkOrder wo2 = ws.grabById(19);
     System.out.println(wo2);
     ws.deleteWO(wo2);
-    WorkOrder wo3 = ws.grabById(23);
+    WorkOrder wo3 = ws.grabById(19);
     assertFalse(wo3 != null);
     }
 

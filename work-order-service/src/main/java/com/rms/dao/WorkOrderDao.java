@@ -5,8 +5,4 @@ import com.rms.model.WorkOrder;
 
 public interface WorkOrderDao extends CrudRepository<WorkOrder, Integer> {
 
-    WorkOrder findById(int id);
-
-    
-
 }

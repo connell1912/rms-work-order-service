@@ -31,19 +31,11 @@ public class WorkOrderController {
         return wos.grabById(id);
     }
 
-    @PostMapping("/newworkorder")
+    @PostMapping("/new")
     public String insert(@RequestBody WorkOrder wo) {
         wos.addWorkOrder(wo);
         return "Saved Work Order";
-    } 
-
-    // @PutMapping("/{id}")
-    // public String updateResolved(@PathVariable("id") int id, Timestamp resolvedtime) {
-    //     WorkOrder wo = wod.findById(id).get();
-    //     wo.setResolvedDateTime(resolvedtime);
-    //     wod.save(wo);
-    //     return "Work Order Updated";
-    // }
+    }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
