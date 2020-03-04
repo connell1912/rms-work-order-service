@@ -52,7 +52,7 @@ public class MockWOServiceTests {
 	@Test
 	public void testGrabById() {
 		when(wod.findById(1)).thenReturn(Optional.of(wo));
-		WorkOrder wo2 = wos.grabById(1);
+		WorkOrder wo2 = wos.grabById(1).get();
 		assertEquals("test1@test.com", wo2.getContactEmail());
 	}
 
