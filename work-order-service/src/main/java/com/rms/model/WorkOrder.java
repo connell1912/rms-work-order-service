@@ -20,7 +20,6 @@ import lombok.ToString;
 @Entity
 @Table
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 public class WorkOrder {
@@ -56,6 +55,10 @@ public class WorkOrder {
 
     @Column
     private int resolverId;
+
+    public WorkOrder() {
+        super();
+    }
 
     public WorkOrder(Timestamp createdDateTime, Timestamp resolvedDateTime, Category category, Status status,
             String description, String contactEmail, int creatorId, int resolverId) {

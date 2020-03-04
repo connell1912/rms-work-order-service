@@ -1,5 +1,7 @@
 package com.rms.service;
 
+import java.util.Optional;
+
 import com.rms.dao.WorkOrderDao;
 import com.rms.model.WorkOrder;
 
@@ -17,7 +19,7 @@ public class WorkOrderService {
     }
 
     public WorkOrder grabById(int id) {
-        return wod.findById(id).get();
+        return wod.findById(id).orElse(new WorkOrder());
     }
 
     public void addWorkOrder(WorkOrder wo) {
@@ -35,6 +37,5 @@ public class WorkOrderService {
     public void updateWorkOrder(WorkOrder wo) {
         wod.save(wo);
     }
-
 
 }
