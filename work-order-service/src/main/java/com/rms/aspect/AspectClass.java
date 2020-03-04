@@ -12,12 +12,12 @@ public class AspectClass {
 
     @After("execution(* updateResolved(..))")
     public void adviceAfterResolution(JoinPoint jp) {
-        Log4j.log.info("Work Order has been resolved");
+        Log4j.LOGGER.info("Work Order has been resolved");
     }
 
     @After("execution(* insert(..))")
     public void adviceAfterInsert(JoinPoint jp) {
-        Log4j.log.info("Work Order has been submitted");
+        Log4j.LOGGER.info("Work Order has been submitted");
     }
 
 }
