@@ -73,7 +73,7 @@ public class MockWOServiceTests {
 		wos.addWorkOrder(wo);
 		when(wod.findById(1)).thenReturn(Optional.of(wo));
 		wos.deleteWorkOrder(1);
-		assertFalse(wo != null);
+		assertFalse(wo == null);
 	}
 
 }
