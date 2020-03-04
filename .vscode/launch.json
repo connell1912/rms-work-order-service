@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-WorkOrderServiceApplication<work-order-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.rms.WorkOrderServiceApplication",
+            "projectName": "work-order-service",
+            "args": ""
+        }
+    ]
+}
