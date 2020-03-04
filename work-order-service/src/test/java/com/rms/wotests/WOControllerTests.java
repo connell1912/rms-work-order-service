@@ -58,7 +58,7 @@ public class WOControllerTests extends AbstractTest {
 
     @Test
     public void createProduct() throws Exception {
-        String uri = "/workorder/newworkorder";
+        String uri = "/workorder/new";
 
         String inputJson = super.mapToJson(wo);
         MvcResult mvcResult = mvc.perform(
@@ -73,7 +73,7 @@ public class WOControllerTests extends AbstractTest {
 
     @Test
    public void deleteProduct() throws Exception {
-      String uri = "/workorder/21";
+      String uri = "/workorder/20";
       MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.delete(uri)).andReturn();
       int status = mvcResult.getResponse().getStatus();
       assertEquals(200, status);

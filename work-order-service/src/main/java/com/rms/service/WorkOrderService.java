@@ -17,7 +17,7 @@ public class WorkOrderService {
     }
 
     public WorkOrder grabById(int id) {
-        return wod.findById(id);
+        return wod.findById(id).get();
     }
 
     public void addWorkOrder(WorkOrder wo) {
