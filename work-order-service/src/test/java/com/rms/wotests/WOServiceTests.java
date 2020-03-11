@@ -64,7 +64,7 @@ public class WOServiceTests {
 
     @Test
     public void findByIdTest() {
-        WorkOrder wo = ws.grabById(13);
+        WorkOrder wo = ws.grabById(13).get();
         System.out.println("***********\n" + wo);
         assertNotNull(wo);
     }
@@ -72,10 +72,10 @@ public class WOServiceTests {
     @Test
     public void updateTest() {
         System.out.println("*********************update\n");
-        WorkOrder wo = ws.grabById(13);
+        WorkOrder wo = ws.grabById(13).get();
         System.out.println(wo);
         wo.setContactEmail("wow@test.com");
-        WorkOrder wo2 = ws.grabById(13);
+        WorkOrder wo2 = ws.grabById(13).get();
         ws.updateWorkOrder(wo2);
         assertNotSame(wo, wo2);
     }

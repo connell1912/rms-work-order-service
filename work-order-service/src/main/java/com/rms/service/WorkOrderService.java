@@ -16,8 +16,8 @@ public class WorkOrderService {
         return wod.findAll();
     }
 
-    public WorkOrder grabById(int id) {
-        return wod.findById(id).orElse(new WorkOrder());
+    public Optional<WorkOrder> grabById(int id) {
+        return wod.findById(id);
     }
 
     public void addWorkOrder(WorkOrder wo) {
