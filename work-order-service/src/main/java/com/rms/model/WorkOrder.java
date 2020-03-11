@@ -60,10 +60,9 @@ public class WorkOrder {
         super();
     }
 
-    public WorkOrder(Timestamp createdDateTime, Timestamp resolvedDateTime, Category category, Status status,
+    public WorkOrder(Timestamp createdDateTime, Category category, Status status,
             String description, String contactEmail, int creatorId, int resolverId) {
         this.createdDateTime = createdDateTime;
-        this.resolvedDateTime = resolvedDateTime;
         this.category = category;
         this.status = status;
         this.description = description;
