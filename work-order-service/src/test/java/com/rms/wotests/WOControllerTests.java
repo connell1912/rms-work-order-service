@@ -32,14 +32,13 @@ public class WOControllerTests extends AbstractTest {
     public void setUp() {
         super.setUp();
         createdDateTime = null;
-        resolvedDateTime = null;
         category = Category.AIR_CONDITIONING;
         status = Status.PENDING;
         description = "AC is broken";
         contactEmail = "test@email.com";
         creatorId = 1;
         resolverId = 1;
-        wo = new WorkOrder(createdDateTime, resolvedDateTime, category, status, description, contactEmail, creatorId,
+        wo = new WorkOrder(createdDateTime, category, status, description, contactEmail, creatorId,
                 resolverId);
     }
 
@@ -68,18 +67,8 @@ public class WOControllerTests extends AbstractTest {
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
-        assertEquals(content, "Saved Work Order");
+        assertEquals("Saved Work Order", content);
     }
-
-//     @Test
-//    public void deleteWorkOrder() throws Exception {
-//       String uri = "/workorder/20";
-//       MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.delete(uri)).andReturn();
-//       int status = mvcResult.getResponse().getStatus();
-//       assertEquals(200, status);
-//       String content = mvcResult.getResponse().getContentAsString();
-//       assertEquals(content, "Work Order Deleted");
-//    }
 
    @Test
    public void getFindById() throws Exception {
