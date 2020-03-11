@@ -40,14 +40,13 @@ public class WOServiceTests {
     @Before
     public void setup() {
         createdDateTime = null;
-        resolvedDateTime = null;
         category = Category.AIR_CONDITIONING;
         status = Status.PENDING;
         description = "AC is broken";
         contactEmail = "test@email.com";
         creatorId = 1;
         resolverId = 1;
-        wo = new WorkOrder(createdDateTime, resolvedDateTime, category, status, description, contactEmail, creatorId,
+        wo = new WorkOrder(createdDateTime, category, status, description, contactEmail, creatorId,
                 resolverId);
     }
 
@@ -80,15 +79,6 @@ public class WOServiceTests {
         ws.updateWorkOrder(wo2);
         assertNotSame(wo, wo2);
     }
-
-    // @Test
-    // public void deleteTest() {
-    // WorkOrder wo2 = ws.grabById(19);
-    // System.out.println(wo2);
-    // ws.deleteWO(wo2);
-    // WorkOrder wo3 = ws.grabById(19);
-    // assertFalse(wo3 != null);
-    // }
 
     @Test
     public void findAllTest() {
