@@ -19,13 +19,4 @@ public class WorkOrderServiceApplication {
 		SpringApplication.run(WorkOrderServiceApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner runner(WorkOrderDao wod) {
-		return args -> {
-//			 wod.save(new WorkOrder(null, Category.LIGHTING, Status.PENDING, "Light over the white board is flickering", "ardonp@gmail.com", 1));
-//			 wod.save(new WorkOrder(null, Category.DOORS, Status.PENDING, "Door is ajar", "ardonp@gmail.com", 1));
-//			 wod.save(new WorkOrder(null, Category.AIR_CONDITIONING, Status.PENDING, "AC is rattling", "ardonp@gmail.com", 1));
-		};
-	}
-
 }
