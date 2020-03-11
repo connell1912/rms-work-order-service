@@ -67,7 +67,7 @@ public class WOControllerTests extends AbstractTest {
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
         String content = mvcResult.getResponse().getContentAsString();
-        assertEquals(content, "Saved Work Order");
+        assertEquals("Saved Work Order", content);
     }
 
    @Test
