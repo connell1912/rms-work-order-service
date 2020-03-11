@@ -70,16 +70,6 @@ public class WOControllerTests extends AbstractTest {
         assertEquals(content, "Saved Work Order");
     }
 
-//     @Test
-//    public void deleteWorkOrder() throws Exception {
-//       String uri = "/workorder/20";
-//       MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.delete(uri)).andReturn();
-//       int status = mvcResult.getResponse().getStatus();
-//       assertEquals(200, status);
-//       String content = mvcResult.getResponse().getContentAsString();
-//       assertEquals(content, "Work Order Deleted");
-//    }
-
    @Test
    public void getFindById() throws Exception {
        String uri = "/workorder/13";
