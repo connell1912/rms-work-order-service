@@ -29,3 +29,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### Data Files ###
+work-order-service/workorderdb.mv.db
