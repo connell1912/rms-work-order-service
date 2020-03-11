@@ -32,14 +32,13 @@ public class WOControllerTests extends AbstractTest {
     public void setUp() {
         super.setUp();
         createdDateTime = null;
-        resolvedDateTime = null;
         category = Category.AIR_CONDITIONING;
         status = Status.PENDING;
         description = "AC is broken";
         contactEmail = "test@email.com";
         creatorId = 1;
         resolverId = 1;
-        wo = new WorkOrder(createdDateTime, resolvedDateTime, category, status, description, contactEmail, creatorId,
+        wo = new WorkOrder(createdDateTime, category, status, description, contactEmail, creatorId,
                 resolverId);
     }
 
