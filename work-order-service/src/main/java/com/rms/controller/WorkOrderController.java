@@ -18,6 +18,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+/
+ * @author 1912dec16 Java Fullstack Batch
+ * <br>
+ * <br>
+ * The WorkOrderController class communicates with our front end. This class includes
+ * the annotations: 
+ * @RestController This annotation is applied to a class to mark it as a request handler
+ * @RequestMapping maps the requests for our class
+ * @CrossOrigins the communcation with the port tied to the front end
+ */
+	 
 @RestController
 @RequestMapping("/workorder")
 @CrossOrigin(origins={"http://localhost:3000"})
